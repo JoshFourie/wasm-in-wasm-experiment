@@ -1,0 +1,40 @@
+[package]
+name = 'runtime'
+version = '0.1.0'
+edition = '2018'
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+# [dependencies]
+# wasmer = "2.0.0"
+
+[dependencies]
+wasmer = { git = "https://github.com/JoshFourie/wasmer-patch.git", default-features = false, features = ["wasm-types-polyfill", "js", "std"] }
+# wasmer = { path = "../../wasmer-patch", default-features = false, features = ["wasm-types-polyfill", "js", "std"] }
+wasm-bindgen = { version = "0.2.75", features = ["serde-serialize"]  }
+console_error_panic_hook = "0.1.6"
+wasm-bindgen-futures = "0.4.25"
+js-sys = "0.3.52"
+
+reqwest = "0.11.4"
+bytes = "1.0.1"
+
+[dependencies.web-sys]
+version = "0.3.4"
+features = [
+  'Headers',
+  'Request',
+  'RequestInit',
+  'RequestMode',
+  'Response',
+  'Window',
+  'RequestCache',
+  'console'
+]
+
+
+[lib]
+crate-type = ['cdylib', 'rlib']  # compile for wasm target
+
+[profile.release]
+opt-level = 's'  # optimise for small code size

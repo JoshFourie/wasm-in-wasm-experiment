@@ -1,0 +1,6 @@
+app/LICENSE-APACHE
+app/LICENSE-MIT
+app/.travis.yml
+app/package-lock.json
+app/.bin
+app/README.md
