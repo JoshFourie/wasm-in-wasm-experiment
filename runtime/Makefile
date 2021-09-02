@@ -9,6 +9,7 @@ build:
 app-resources:
 	cat resources/remove.txt | xargs rm -rf
 	cp resources/app-package.json app/package.json
+	cp resources/index.js app/index.js
 
 app-init:
 	npm init wasm-app app

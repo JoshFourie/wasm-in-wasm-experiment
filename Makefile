@@ -2,7 +2,7 @@
 
 build:
 	$(MAKE) modules
-	$(MAKE) runtime rule=build
+	$(MAKE) runtime rule='app build'
 	$(MAKE) artifact-registry rule=build
 
 runtime:

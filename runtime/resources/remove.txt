@@ -4,3 +4,4 @@ app/.travis.yml
 app/package-lock.json
 app/.bin
 app/README.md
+app/index.js
