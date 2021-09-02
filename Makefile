@@ -1,6 +1,9 @@
 .PHONY: artifact-registry modules build runtime alpha beta help
 
-all: runtime-serve runtime-watch artifact-registry-serve
+build:
+	$(MAKE) modules
+	$(MAKE) runtime rule=build
+	$(MAKE) artifact-registry rule=build
 
 runtime:
 	cd runtime && make $(rule)
