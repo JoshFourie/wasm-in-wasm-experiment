@@ -18,6 +18,7 @@ beta:
 	cd beta && make $(rule)
 
 modules:
+	mkdir -p artifact-registry/src/resources
 	cat modules.txt | xargs -I@ make @ rule=build
 	cat modules.txt | xargs -I@ cp @/pkg/@_bg.wasm artifact-registry/src/resources/@.wasm
 
